@@ -1,5 +1,5 @@
 from tethysapp.tethysdash.plugin_helpers import TethysDashPlugin
-from tethysdash_plugin_hydroserver.utilities import clamp_date_to_datastream, get_hydroserver_instance
+from tethysdash_plugin_hydroserver.utilities import date_clamp_to_datastream, hydroserver_instance_get
 
 
 class HydroServerDatastreamPlot(TethysDashPlugin):
@@ -29,14 +29,14 @@ class HydroServerDatastreamPlot(TethysDashPlugin):
         Fetch data from a HydroServer datastream and return it in a format suitable for Plotly plotting
         """
         # Get the HydroServer API instance
-        hs_api = get_hydroserver_instance(self.host_url, self.api_key)
+        hs_api = hydroserver_instance_get(self.host_url, self.api_key)
         
         # Get the datastream object from the HydroServer API
         datastream = hs_api.datastreams.get(uid=self.datastream_id)
         
         # Determine the start and end dates for the observation query
-        date_start = clamp_date_to_datastream(self.get_arg("date_start"), datastream)
-        date_end = clamp_date_to_datastream(self.get_arg("date_end"), datastream)
+        date_start = date_clamp_to_datastream(self.get_arg("date_start"), datastream)
+        date_end = date_clamp_to_datastream(self.get_arg("date_end"), datastream)
         
         if date_start is None:
             date_start = datastream.phenomenon_begin_time

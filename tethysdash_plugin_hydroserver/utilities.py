@@ -3,7 +3,8 @@ from typing import Literal
 from hydroserverpy import HydroServer
 from hydroserverpy.api.models import Datastream
 
-def get_hydroserver_instance(host_url: str, api_key: str) -> HydroServer:
+
+def hydroserver_instance_get(host_url: str, api_key: str) -> HydroServer:
     """
     Get an authenticated instance of the HydroServer client.
 
@@ -17,7 +18,7 @@ def get_hydroserver_instance(host_url: str, api_key: str) -> HydroServer:
     return HydroServer(host_url, apikey=api_key)
 
 
-def clamp_date_to_datastream(date: datetime | Literal["latest"] | None, datastream: Datastream) -> datetime | None:
+def date_clamp_to_datastream(date: datetime | Literal["latest"] | None, datastream: Datastream) -> datetime | None:
     """
     Clamp the given date to the bounds of the datastream's phenomenon times.
 
