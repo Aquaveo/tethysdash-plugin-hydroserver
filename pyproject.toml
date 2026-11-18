@@ -24,6 +24,7 @@ Issues = "https://github.com/Aquaveo/tethysdash-plugin-hydroserver/issues"
 
 [project.entry-points."intake.drivers"]
 hydroserver_datastream_plot = "tethysdash_plugin_hydroserver.datastream_plot:HydroServerDatastreamPlot"
+hydroserver_sites_map = "tethysdash_plugin_hydroserver.sites_map:HydroServerSitesMap"
 
 [tool.setuptools]
 include-package-data = true

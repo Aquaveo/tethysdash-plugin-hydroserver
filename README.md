@@ -39,3 +39,33 @@ datastream's own range is pulled back to that range, and if a date is omitted th
 period is used. This means you can pick any date when configuring the dashboard without having to know
 the datastream's exact extent up front.
 
+## HydroServer Sites Map
+
+The **HydroServer Sites Map** visualization plots the monitoring sites in a workspace as points on a
+map. Each site's popup shows its name, code, type, and (when available) description, elevation, and
+location. Clicking a site publishes its id to the `hydroserver_site_id` dashboard variable, so other
+components on the dashboard can react to the selection.
+
+### Site type symbology
+
+Each site is symbolized by its `site_type` so the different kinds of sites are distinguishable at a
+glance, and this happens automatically:
+
+- Common HydroServer/ODM2 site types are shown with a predefined shape and color.
+- Any other site type is automatically given its own distinct shape and color.
+- Sites with no site type are shown as a neutral gray circle.
+
+The legend lists only the site types actually present in the workspace, so it always matches what is
+on the map. No setup is required — unusual or previously unseen site types are distinguished on their
+own.
+
+The predefined symbols for common site types are:
+
+| Site type                    | Shape    | Color     |
+| ---------------------------- | -------- | --------- |
+| Stream                       | triangle | `#4e79a7` |
+| Lake, Reservoir, Impoundment | square   | `#59a14f` |
+| Spring                       | star     | `#b07aa1` |
+| Well                         | diamond  | `#9c755f` |
+| Atmosphere                   | cross    | `#f28e2b` |
+| Wetland                      | x        | `#76b7b2` |
