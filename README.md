@@ -22,3 +22,20 @@ Until this is addressed (see below), take the following precautions when using t
 A future release of Tethys Dash (after `0.20.2`) will add a feature to safeguard sensitive plugin
 arguments. Once that functionality is available, this plugin will be updated to use it, and the 
 precautions above will no longer be necessary. Until then, the guidance above applies.
+
+## HydroServer Datastream Plot
+
+The **HydroServer Datastream Plot** visualization plots a single datastream's observations over time
+as a Plotly line chart. You configure it with the HydroServer host URL, an API key, and the
+datastream's id, plus an optional start and end date to limit the time range.
+
+The y-axis is labeled with the datastream's observed property and unit (for example,
+`Temperature (degC)`), and the x-axis is the observation date. If the observed property or unit can't
+be read, the axis falls back to `Unknown`, and if the datastream has no observations in the selected
+range the chart renders empty with a "No Data" label rather than failing.
+
+Dates are clamped to the datastream's available period: a start or end date earlier or later than the
+datastream's own range is pulled back to that range, and if a date is omitted the datastream's full
+period is used. This means you can pick any date when configuring the dashboard without having to know
+the datastream's exact extent up front.
+
