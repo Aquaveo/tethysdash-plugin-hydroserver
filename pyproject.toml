@@ -30,4 +30,4 @@ include-package-data = true
 zip-safe = false
 
 [tool.setuptools.packages.find]
-include = ["*"]
+include = ["tethysdash_plugin_hydroserver*"]
