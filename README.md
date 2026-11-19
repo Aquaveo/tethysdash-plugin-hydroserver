@@ -69,3 +69,20 @@ The predefined symbols for common site types are:
 | Well                         | diamond  | `#9c755f` |
 | Atmosphere                   | cross    | `#f28e2b` |
 | Wetland                      | x        | `#76b7b2` |
+
+## HydroServer Sites Map Layer
+
+The **HydroServer Sites Map Layer** adds a workspace's monitoring sites to an existing map
+as a single layer, rather than rendering its own map. You add it to a map in the layer
+editor, where it pre-fills the layer's style, legend, and popup settings; from there the
+Style, Labels, Legend, and Attributes tabs are yours to adjust.
+
+Unlike the standalone Sites Map, this layer is dynamic: it re-fetches the workspace's sites
+each time the map renders, so added, moved, or removed sites stay current without
+reconfiguring the dashboard. The popup fields, the `hydroserver_site_id` click variable,
+and the site-type symbology all behave the same as the Sites Map visualization.
+
+The site-type symbology is a snapshot taken when the layer is configured, reflecting the
+site types present at that time. If a brand-new site type appears afterward, its sites still
+show on the map but use the default gray symbol and are absent from the legend until the
+layer is reconfigured.
