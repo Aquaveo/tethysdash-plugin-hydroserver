@@ -27,6 +27,7 @@ hydroserver_datastream_plot = "tethysdash_plugin_hydroserver.datastream_plot:Hyd
 hydroserver_sites_map = "tethysdash_plugin_hydroserver.sites_map:HydroServerSitesMap"
 hydroserver_sites_map_layer = "tethysdash_plugin_hydroserver.sites_map_layer:HydroServerSitesMapLayer"
 hydroserver_datastream_dropdown = "tethysdash_plugin_hydroserver.datastream_dropdown:HydroServerDatastreamDropdown"
+hydroserver_sites_dropdown = "tethysdash_plugin_hydroserver.sites_dropdown:HydroServerSitesDropdown"
 
 [tool.setuptools]
 include-package-data = true

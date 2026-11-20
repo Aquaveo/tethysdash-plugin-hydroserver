@@ -104,3 +104,14 @@ updates whenever a different datastream is picked.
 Because a plugin input re-runs whenever its arguments change, the workspace can itself come from
 another variable input — set the dropdown's workspace id to a `${...}` reference and the datastream
 list repopulates when the upstream workspace selection changes.
+
+## HydroServer Sites Dropdown
+
+The **HydroServer Sites Dropdown** is a variable input that lets a dashboard viewer pick a site from a
+workspace. You configure it with the HydroServer host URL, an API key, and the workspace id. Once configured, it fetches
+the workspace's sites and lists them alphabetically in a dropdown.
+
+The selected site's id is published to the `HydroServer Site` dashboard variable, which other
+components reference with `${HydroServer Site}`. This is the same variable the HydroServer Sites Map and
+Sites Map Layer publish when a site is clicked, so the dropdown and the maps are interchangeable ways to
+select a site. Selecting from either updates everything that references `${HydroServer Site}`.
