@@ -26,6 +26,7 @@ Issues = "https://github.com/Aquaveo/tethysdash-plugin-hydroserver/issues"
 hydroserver_datastream_plot = "tethysdash_plugin_hydroserver.datastream_plot:HydroServerDatastreamPlot"
 hydroserver_sites_map = "tethysdash_plugin_hydroserver.sites_map:HydroServerSitesMap"
 hydroserver_sites_map_layer = "tethysdash_plugin_hydroserver.sites_map_layer:HydroServerSitesMapLayer"
+hydroserver_datastream_dropdown = "tethysdash_plugin_hydroserver.datastream_dropdown:HydroServerDatastreamDropdown"
 
 [tool.setuptools]
 include-package-data = true

@@ -86,3 +86,19 @@ The site-type symbology is a snapshot taken when the layer is configured, reflec
 site types present at that time. If a brand-new site type appears afterward, its sites still
 show on the map but use the default gray symbol and are absent from the legend until the
 layer is reconfigured.
+
+## HydroServer Datastream Dropdown
+
+The **HydroServer Datastream Dropdown** is a variable input that lets a dashboard viewer pick a
+datastream from a workspace. You configure it with the HydroServer host URL, an API key, and the
+workspace id; it fetches the workspace's datastreams and lists them in a dropdown, each labeled by
+its site as `Site Name - Datastream Name` and sorted alphabetically.
+
+The selected datastream's id is published to the `HydroServer Datastream` dashboard variable, which
+other components reference with `${HydroServer Datastream}`. The intended pairing is the HydroServer
+Datastream Plot: set the plot's datastream id argument to `${HydroServer Datastream}` and the chart
+updates whenever a different datastream is picked.
+
+Because a plugin input re-runs whenever its arguments change, the workspace can itself come from
+another variable input — set the dropdown's workspace id to a `${...}` reference and the datastream
+list repopulates when the upstream workspace selection changes.
