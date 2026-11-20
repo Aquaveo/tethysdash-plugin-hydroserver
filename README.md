@@ -43,7 +43,7 @@ the datastream's exact extent up front.
 
 The **HydroServer Sites Map** visualization plots the monitoring sites in a workspace as points on a
 map. Each site's popup shows its name, code, type, and (when available) description, elevation, and
-location. Clicking a site publishes its id to the `hydroserver_site_id` dashboard variable, so other
+location. Clicking a site publishes its id to the `HydroServer Site` dashboard variable, so other
 components on the dashboard can react to the selection.
 
 ### Site type symbology
@@ -79,7 +79,7 @@ Style, Labels, Legend, and Attributes tabs are yours to adjust.
 
 Unlike the standalone Sites Map, this layer is dynamic: it re-fetches the workspace's sites
 each time the map renders, so added, moved, or removed sites stay current without
-reconfiguring the dashboard. The popup fields, the `hydroserver_site_id` click variable,
+reconfiguring the dashboard. The popup fields, the `HydroServer Site` click variable,
 and the site-type symbology all behave the same as the Sites Map visualization.
 
 The site-type symbology is a snapshot taken when the layer is configured, reflecting the

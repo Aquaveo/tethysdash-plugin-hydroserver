@@ -55,8 +55,8 @@ class HydroServerSitesMap(TethysDashPlugin):
         layer_builder.add_attribute_alias("elevation", "Elevation", self.LAYER_NAME)
         layer_builder.add_attribute_alias("location", "Location", self.LAYER_NAME)
 
-        # Set the hydroserver_site_id attribute variable to the clicked site's id so other dashboard components can react to the selection
-        layer_builder.add_attribute_variable("id", "hydroserver_site_id", self.LAYER_NAME)
+        # Set the "HydroServer Site" attribute variable to the clicked site's id so other dashboard components can react to the selection
+        layer_builder.add_attribute_variable("id", "HydroServer Site", self.LAYER_NAME)
 
         # The id is only needed for the attribute variable, so hide it from the popup
         layer_builder.omit_popup_attribute("id", self.LAYER_NAME)
