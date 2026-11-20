@@ -9,6 +9,7 @@ class HydroServerDatastreamDropdown(TethysDashPlugin):
         "host_url": "text",
         "api_key": "text",
         "workspace_id": "text",
+        "site_id": "text",          # Optional
     }
     group = "HydroServer"
     label = "HydroServer Datastream Dropdown"
@@ -33,6 +34,7 @@ class HydroServerDatastreamDropdown(TethysDashPlugin):
         host_url = self.get_arg("host_url")
         api_key = self.get_arg("api_key")
         workspace_id = self.get_arg("workspace_id")
+        site_id = self.get_arg("site_id")
 
         # Return an empty dropdown if any of the required arguments are missing
         if not host_url or not api_key or not workspace_id:
@@ -49,7 +51,10 @@ class HydroServerDatastreamDropdown(TethysDashPlugin):
         hs_api = hydroserver_instance_get(host_url, api_key)
 
         # Fetch the list of datastreams for the workspace
-        datastreams = hs_api.datastreams.list(workspace=workspace_id, fetch_all=True)
+        if site_id:
+            datastreams = hs_api.datastreams.list(workspace=workspace_id, thing=site_id, fetch_all=True)
+        else:
+            datastreams = hs_api.datastreams.list(workspace=workspace_id, fetch_all=True)
 
         # Fetch and map each site's id to its name so datastreams can be labeled by their site
         sites = hs_api.things.list(workspace=workspace_id, fetch_all=True)

@@ -90,9 +90,11 @@ layer is reconfigured.
 ## HydroServer Datastream Dropdown
 
 The **HydroServer Datastream Dropdown** is a variable input that lets a dashboard viewer pick a
-datastream from a workspace. You configure it with the HydroServer host URL, an API key, and the
-workspace id; it fetches the workspace's datastreams and lists them in a dropdown, each labeled by
-its site as `Site Name - Datastream Name` and sorted alphabetically.
+datastream from a workspace. You configure it with the HydroServer host URL, an API key, the
+workspace id, and an optional site id. It fetches the workspace's datastreams and lists them
+in a dropdown, each labeled by its site as `Site Name - Datastream Name` and sorted alphabetically.
+If a site id is provided, the dropdown includes only the datastreams that belong to the specified
+site as selectable options.
 
 The selected datastream's id is published to the `HydroServer Datastream` dashboard variable, which
 other components reference with `${HydroServer Datastream}`. The intended pairing is the HydroServer
